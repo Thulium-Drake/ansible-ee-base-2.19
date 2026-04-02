@@ -13,5 +13,5 @@ function sanity_check() {
 
 sanity_check
 
-ANSIBLE_VERSION=$(grep ansible-core execution-environment.yml | cut -d= -f3)
+ANSIBLE_VERSION=$(grep ansible-core execution-environment.yml | cut -d'<' -f2 | cut -d\. -f1-2)
 ansible-builder build -v3 -t ee-base-$ANSIBLE_VERSION:latest
