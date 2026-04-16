@@ -1,0 +1,11 @@
+---
+name: Build and publish Ansible Execution Environment
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  include-common-workflow:
+    uses: Element-Networks/ci_workflows/.forgejo/workflows/ansible_ee.yaml@main
+    secrets: inherit
